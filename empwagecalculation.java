@@ -1,35 +1,24 @@
 public class empwagecalculation {
-public static void main(String args[])
-{
-System.out.println("Welcome to Employee Wage computation");
-int IS_FULL_TIME=1;
-int IS_PART_TIME=2;
-int wage_per_hour=20;
-int work_hour;
-int wage;
-int empcheck = (int) (Math.random() * 10) % 3;
-    switch (empcheck)
-	{
-	case 1:
-    	{
-    		System.out.println("Employee is Present");
-		    work_hour=8;
-			break;
-    	}
-    	case 2:
-    	{
-	        System.out.println("Employee is present part time");
-    		work_hour=4;
-			break;
-    	}
-    default:
-    	{
-    System.out.println("Employee is Absent");
-    work_hour=0;
-    	}
-	}
-wage = wage_per_hour * work_hour;
-System.out.println("Wage of the employee is" + wage);
 
-}
+	public static final int IS_FULL_TIME =1;
+	public static final int IS_PART_TIME =2;
+	public static void main(String args[]) {
+		System.out.println("Welcome to Employee Wage computation");
+		int emp_rate_per_hour=20;
+		int emp_hours;
+		int emp_wage;
+    		int empcheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (empcheck) {
+	        	case IS_FULL_TIME:
+			    emp_hours=8;
+			    break;
+			case IS_PART_TIME:
+			    emp_hours=4;
+			    break;
+    			default:
+		    	    emp_hours=0;
+		}
+		emp_wage= emp_hours * emp_rate_per_hour;
+		System.out.println("Employee wage" + emp_wage);
+	}
 }
